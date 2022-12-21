@@ -1,0 +1,21 @@
+<h1>Available Travels</h1>
+<div class="footer-links">
+  <a href="https://github.com/Rox1610" target="_blank"><i class="fab fa-github"></i></a>
+  <a href="https://www.instagram.com/rox__dvl/" target="_blank"><i class="fab fa-instagram"></i></a>
+  <a href="https://www.linkedin.com/in/roxanne-devillers-b2751154/" target="_blank"><i class="fab fa-linkedin"></i></a>
+</div>
+
+<div class="container-era">
+  <% @eras.each do |era| %>
+    <div class="card-trip">
+      <%= cl_image_tag era.photo.key %>
+      <div class="card-trip-infos">
+        <div>
+          <h2>Title here</h2>
+          <p>Short description here!</p>
+        </div>
+        <h2 class="card-trip-pricing">£99.99</h2>
+      </div>
+    </div>
+  <% end %>
+</div>
