@@ -8,6 +8,8 @@
   height: 200px;
   width: 100%;
   object-fit: cover;
+  margin-top: 10px;
+  opacity: .9;
 }
 
 .card-trip h2 {
@@ -15,13 +17,6 @@
   font-weight: bold;
   margin: 0;
 }
-
-.card-trip p {
-  font-size: 12px;
-  opacity: .7;
-  margin: 0;
-}
-
 
 .card-trip .card-trip-infos {
   padding: 16px;
@@ -32,7 +27,6 @@
 }
 
 .container-era{
-  height: 200px;
-  width: 400px;
-  margin-top: 10px;
+  margin-top: 5px;
+  margin-left: 10px;
 }

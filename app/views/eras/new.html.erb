@@ -1,0 +1,16 @@
+<div class="container py-5">
+  <div class="row">
+    <div class="col-12 col-md-6 offset-lg-3">
+      <div class="bg-white rounded p-3 shadow">
+        <h3>Create a new travel 🚀</h3>
+        <%= simple_form_for @era do |f| %>
+          <%= f.input :title, placeholder: 'Add the travel name',  required: true %>
+          <%= f.input :content, placeholder: 'Which experience do you propose?', :label => 'Experience'%>
+          <%= f.input :price, as: :integer, placeholder: '$/hour', input_html: { min: '0', step: '1' },  required: true %>
+          <%= f.input :photo, as: :file,  required: true %>
+          <%= f.submit 'Create travel', class: 'btn btn-light' %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

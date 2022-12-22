@@ -15,12 +15,12 @@
             <%= link_to "Home", root_path, class: "nav-link" %>
           </li>
           <li class="nav-item">
-            <%= link_to "Messages", "#", class: "nav-link" %>
+            <%= link_to "Add travel", new_era_path, class: "nav-link" %>
           </li>
           <li class="nav-item dropdown">
             <%= image_tag "https://media.licdn.com/dms/image/D4E03AQHv0RGSuRU2Fw/profile-displayphoto-shrink_100_100/0/1671482352046?e=1677110400&v=beta&t=MxIy6ygnWbrtE4LQmd-vB4ay_Am2EBcosP0EpLuXh_A", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Action", "#", class: "dropdown-item" %>
+              <%= link_to "Profile", "#", class: "dropdown-item" %>
               <%= link_to "Another action", "#", class: "dropdown-item" %>
               <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
             </div>
