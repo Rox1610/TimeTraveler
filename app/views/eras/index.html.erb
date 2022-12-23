@@ -1,4 +1,4 @@
-<div class="travels-container">
+<div class="travels-container m-4">
   <h1>Available Travels</h1>
   <div class="footer-links">
     <a href="https://github.com/Rox1610" target="_blank"><i class="fab fa-github"></i></a>
@@ -6,7 +6,7 @@
     <a href="https://www.linkedin.com/in/roxanne-devillers-b2751154/" target="_blank"><i class="fab fa-linkedin"></i></a>
   </div>
 
-  <div class=" container-era row row-cols-1 row-cols-md-3 g-4">
+  <div class=" container-era row row-cols-1 row-cols-md-3 g-4 mb-5">
     <% @eras.each do |era| %>
       <div class="card-trip me-2">
         <%= cl_image_tag era.photo.key %>
