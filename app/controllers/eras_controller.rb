@@ -31,7 +31,7 @@ class ErasController < ApplicationController
   private
 
   def set_era
-    @era = era.find(params[:id])
+    @era = Era.find(params[:id])
   end
 
   def era_params

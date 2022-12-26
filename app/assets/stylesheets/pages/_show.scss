@@ -1,0 +1,16 @@
+.show-card > img{
+  height: 350px;
+  width: 625px;
+  margin-top: 10px;
+  opacity: .9;
+  object-fit: cover;
+}
+
+.show-card{
+  width: 650px;
+  height: auto;
+  text-align: center;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}

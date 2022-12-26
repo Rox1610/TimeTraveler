@@ -12,7 +12,9 @@
         <%= cl_image_tag era.photo.key %>
         <div class="card-trip-infos">
           <div>
-            <h2><%= era.title %></h2>
+            <%= link_to era_path(era), class:"text-decoration-none" do %>
+              <h2><%= era.title %></h2>
+            <% end %>
           </div>
           <h2 class="card-trip-pricing"><%= era.price %> $/hour</h2>
         </div>
