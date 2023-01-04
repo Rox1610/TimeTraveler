@@ -2,7 +2,11 @@ class ErasController < ApplicationController
   before_action :set_era, only: %i[show update]
 
   def index
-    @eras = Era.all
+    if params[:query].present?
+      @eras = Era.search_by_title_and_content(params[:query])
+    else
+      @eras = Era.all
+    end
   end
 
   def show

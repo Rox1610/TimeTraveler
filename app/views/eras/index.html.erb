@@ -6,6 +6,16 @@
     <a href="https://www.linkedin.com/in/roxanne-devillers-b2751154/" target="_blank"><i class="fab fa-linkedin"></i></a>
   </div>
 
+  <%= form_with url: eras_path, method: :get, class: "d-flex my-3 w-50" do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Find a time travel" %>
+    <%= button_tag type: 'submit', class: "button-search" do %>
+      <i class="fa-solid fa-magnifying-glass"></i>
+    <% end %>
+  <% end %>
+
   <div class=" container-era row row-cols-1 row-cols-md-3 g-4 mb-5">
     <% @eras.each do |era| %>
       <div class="card-trip me-2">
