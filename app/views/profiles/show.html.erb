@@ -1,0 +1,22 @@
+<div class="container">
+  <h2 class="mt-5"><i>Welcome <%= @current_user.email %></i></h2>
+  <h2 class="mt-5">My transactions</h2>
+  <span class="d-block"><small><em class="text-muted"><%= "You haven't bought any time travels yet!" if @bookings.empty? %></em></small></span>
+  <div class="cards">
+    <% @bookings.each do |booking| %>
+      <%= link_to era_path(era), class:"text-decoration-none" do %>
+        <h2><%= era.title %></h2>
+      <% end %>
+    <% end %>
+  </div>
+
+  <h2 class="mt-5">My requested bookings</h2>
+  <span class="d-block"><small><em class="text-muted"><%= "You have no ask on your time travels!" if @pending_bookings.empty? %></em></small></span>
+  <div class="cards">
+    <% @pending_bookings.each do |booking| %>
+      <%= link_to era_path(era), class:"text-decoration-none" do %>
+        <h2><%= era.title %></h2>
+      <% end %>
+    <% end %>
+  </div>
+</div>
