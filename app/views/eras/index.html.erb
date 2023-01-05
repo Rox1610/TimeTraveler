@@ -1,32 +1,28 @@
 <div class="travels-container m-4">
   <h1>Available Travels</h1>
-  <div class="footer-links">
-    <a href="#"><i class="fa-solid fa-user-astronaut"></i></a>
-    <a href="#"><i class="fa-brands fa-space-awesome"></i></a>
-    <a href="#"><i class="fa-brands fa-fort-awesome"></i></a>
+  <div class="">
+    <%= form_with url: eras_path, method: :get, class: "d-flex my-3 w-50" do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Find a time travel" %>
+      <%= button_tag type: 'submit', class: "button-search" do %>
+        <i class="fa-solid fa-magnifying-glass"></i>
+      <% end %>
+    <% end %>
   </div>
 
-  <%= form_with url: eras_path, method: :get, class: "d-flex my-3 w-50" do %>
-    <%= text_field_tag :query,
-      params[:query],
-      class: "form-control",
-      placeholder: "Find a time travel" %>
-    <%= button_tag type: 'submit', class: "button-search" do %>
-      <i class="fa-solid fa-magnifying-glass"></i>
-    <% end %>
-  <% end %>
-
-  <div class=" container-era row row-cols-1 row-cols-md-3 g-4 mb-5">
+  <div class="container-era row row-cols-1 row-cols-md-3 g-4 mb-5">
     <% @eras.each do |era| %>
-      <div class="card-trip me-2">
+      <div class="card-index me-2">
         <%= cl_image_tag era.photo.key %>
-        <div class="card-trip-infos">
+        <div class="card-index-infos">
           <div>
             <%= link_to era_path(era), class:"text-decoration-none" do %>
               <h2><%= era.title %></h2>
             <% end %>
           </div>
-          <h2 class="card-trip-pricing"><%= era.price %> $/hour</h2>
+          <h2 class="card-index-pricing"><%= era.price %> $/hour</h2>
         </div>
       </div>
     <% end %>

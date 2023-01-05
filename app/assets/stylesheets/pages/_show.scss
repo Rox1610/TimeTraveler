@@ -13,4 +13,20 @@
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin-top: 5px;
+}
+
+.buy-option{
+  margin-left: 400px;
+  display: flex;
+}
+
+.rent-button{
+  margin-left: 5px;
+  text-decoration: none;
+  color: black;
+}
+
+.rent-button:hover{
+  text-decoration: underline;
 }

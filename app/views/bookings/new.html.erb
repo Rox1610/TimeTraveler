@@ -1,0 +1,16 @@
+<div class="container-booking m-4">
+  <h1> Book your travel </h1>
+  <div class="card-new-booking mt-3">
+    <h2>New booking</h2>
+    <h5>Hi <%= current_user.email %>, buy the travel <%= @era.title %>!</h5>
+    <%= simple_form_for [@era, @booking] do |f| %>
+      <%= f.input :start_date, as: :datetime, html5: true %>
+      <%= f.input :end_date, as: :datetime, html5: true %>
+      <%= f.input :comment, label: "Why do you want to rent this travel?", as: :string, required: false %>
+      <%= f.submit "Rent!" %>
+    <% end %>
+    <div class="booking-show-owner-info mt-2">
+      <p><i>Rent by <%= link_to @era_owner.email %></i></p>
+    </div>
+  </div>
+</div>

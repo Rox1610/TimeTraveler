@@ -19,7 +19,7 @@ class BookingsController < ApplicationController
     @booking.era = Era.find(params[:era_id])
     @booking.user = current_user
     if @booking.save
-      redirect_to booking_path(@booking), notice: 'Request done'
+      redirect_to eras_path, notice: 'Request done'
     else
       render :new, status: :unprocessable_entity
     end

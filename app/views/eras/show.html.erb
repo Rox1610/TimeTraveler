@@ -1,10 +1,14 @@
-<div class="container-show-era m-4 d-flex justify-content-center">
+<div class="container-show-era d-flex justify-content-center">
   <div class="show-card">
     <%= cl_image_tag @era.photo.key %>
     <div class="card-infos">
       <h2 class="mt-2"><%= @era.title %></h2>
       <p class="px-3"> <u>Description</u>: <%= @era.content %></p>
-      <p class="card-pricing"><u>Price</u>: <%= @era.price %> $/hour</p>
+      <p class="card-pricing mb-1"><u>Price</u>: <%= @era.price %> $/hour</p>
+      <div class="buy-option">
+        <p><strong>Interested in this travel?</strong></p>
+        <%= link_to 'Rent', new_era_booking_path(@era), class: "rent-button" %>
+      </div>
     </div>
   </div>
 </div>
