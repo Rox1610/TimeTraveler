@@ -12,5 +12,5 @@ Rails.application.routes.draw do
     resources :bookings, only: %i[new create]
   end
 
-  resources :bookings, except: %i[index new create destroy]
+  resources :bookings, except: %i[index new create]
 end

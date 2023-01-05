@@ -1,0 +1,46 @@
+<div class="container-booking-detail">
+  <div class="card-booking-detail">
+    <div class="booking-detailn-show-container">
+      <h3>Confirmed booking for the travel <i><%= @booking.era.title %></i></h3>
+        <div class="booking-detail-show-description">
+          <p><%= @booking.era.content %></p>
+        </div>
+        <div class="booking-detail-show-status">
+          <p><i>Bought by <%= @booking.user.email %></i></p>
+          <p><strong><%= @booking.comment %></strong></p>
+          <% if @booking.pending? %>
+            <p><b>PENDING CONFIRMATION BY OWNER</b></p>
+          <% elsif @booking.confirmed? %>
+            <p><b>ACCEPTED</b></p>
+          <% else %>
+            <p><b>SORRY THE booking WAS CANCELED</b></p>
+          <% end %>
+        </div>
+        <div class="booking-detail-show-boxes">
+          <div class="booking-detail-details">
+            <div style="margin-top: 25px; margin-bottom:25px">
+              <hr>
+            </div>
+            <div class="booking-detail-show-owner-info">
+              <p>Owned by: <%= @booking.era.user.email %> &nbsp&nbsp|&nbsp&nbsp E-mail: <%= @booking.era.user.email %></p>
+            </div>
+          </div>
+        <div class="booking-detail-costs">
+          <p>Total price: <%= @booking.era.price %> $</p>
+        </div>
+        <%# </div> %>
+          <% if current_user == @booking.user %>
+          <%= link_to "Edit", edit_booking_path(@booking), class: 'btn btn-primary' %>
+          <%= link_to "Cancel", booking_path(@booking), class: 'btn btn-primary',
+          method: :destroy,
+          data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
+              <% elsif current_user == @booking.era.user %>
+            <%= link_to "Accept booking", confirm_status_path(@booking, booking: {status: 'confirmed'}), class: 'btn btn-primary',
+          data: { turbo_method: :patch } %>
+          <%= link_to "Reject booking", confirm_status_path(@booking, booking: {status: 'rejected'}), class: 'btn btn-primary',
+        data: { turbo_method: :patch } %>
+      <% end %>
+      <%= link_to "Profile", profile_path, class: 'btn btn-info' %>
+    </div>
+  </div>
+</div>

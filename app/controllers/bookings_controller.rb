@@ -44,7 +44,7 @@ class BookingsController < ApplicationController
 
   def destroy
     @booking.destroy
-    redirect_to bookings_path, notice: 'Your booking was not accepted.'
+    redirect_to profile_path, notice: 'Booking was canceled.'
   end
 
   private

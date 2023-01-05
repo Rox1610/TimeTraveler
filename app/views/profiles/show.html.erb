@@ -4,8 +4,10 @@
   <span class="d-block"><small><em class="text-muted"><%= "You haven't bought any time travels yet!" if @bookings.empty? %></em></small></span>
   <div class="cards">
     <% @bookings.each do |booking| %>
-      <%= link_to era_path(era), class:"text-decoration-none" do %>
-        <h2><%= era.title %></h2>
+      <%= link_to booking_path(booking), class:"text-decoration-none" do %>
+        <ul>
+          <li><%= booking.era.title %></li>
+        </ul>
       <% end %>
     <% end %>
   </div>
@@ -14,8 +16,10 @@
   <span class="d-block"><small><em class="text-muted"><%= "You have no ask on your time travels!" if @pending_bookings.empty? %></em></small></span>
   <div class="cards">
     <% @pending_bookings.each do |booking| %>
-      <%= link_to era_path(era), class:"text-decoration-none" do %>
-        <h2><%= era.title %></h2>
+      <%= link_to booking_path(booking), class:"text-decoration-none" do %>
+        <ul>
+          <li><%= booking.era.title %></li>
+        </ul>
       <% end %>
     <% end %>
   </div>
