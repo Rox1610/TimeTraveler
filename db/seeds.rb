@@ -30,3 +30,6 @@ era_4 = Era.new(title: "Discover the reign of Gladiators", content: "Want to ass
 file_4 = URI.open("https://res.cloudinary.com/ddubtsk96/image/upload/v1672886057/AirBnB%20Clone/gladiator_gfusa9.webp")
 era_4.photo.attach(io: file_4, filename: "gladiator.jpg", content_type: "image/jpg")
 era_4.save
+
+chatroom_1 = Chatroom.create(name: "General")
+chatroom_2 = Chatroom.create(name: "Travel")
