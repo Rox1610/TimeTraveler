@@ -1,0 +1,24 @@
+<div class="chatrooms-container m-4">
+  <h1>Available Chatrooms</h1>
+  <div>
+    <%= form_with url: chatrooms_path, method: :get, class: "d-flex my-3 w-50" do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Find a chatroom" %>
+      <%= button_tag type: 'submit', class: "button-search" do %>
+        <i class="fa-solid fa-magnifying-glass"></i>
+      <% end %>
+    <% end %>
+  </div>
+
+  <ul>
+    <% @chatrooms.each do |chatroom| %>
+      <li>
+        <%= link_to chatroom_path(chatroom), class:"text-decoration-none" do %>
+          <h2><%= chatroom.name %></h2>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+</div>

@@ -1,6 +1,10 @@
 class ChatroomsController < ApplicationController
   def index
-    @chatrooms = Chatroom.all
+    if params[:query].present?
+      @chatrooms = Chatroom.search_by_name(params[:query])
+    else
+      @chatrooms = Chatroom.all
+    end
   end
 
   def show
