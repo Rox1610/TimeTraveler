@@ -13,4 +13,5 @@ Rails.application.routes.draw do
   end
 
   resources :bookings, except: %i[index new create]
+  resources :chatrooms, only: :show
 end
